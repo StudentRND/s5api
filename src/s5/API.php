@@ -85,7 +85,7 @@ class API
     {
         session_start();
 
-        if (!$this->hasTriedLogin && $_GET[self::UriDoLoginKey] === self::UriDoLoginValue) {
+        if (!$this->hasTriedLogin && array_key_exists(self::UriDoLoginKey, $_GET) && $_GET[self::UriDoLoginKey] === self::UriDoLoginValue) {
             $this->hasTriedLogin = true;
             $code = $_GET[self::UriCodeKey];
             $state = $_GET[self::UriStateKey];
