@@ -143,7 +143,7 @@ class API
 
         $qs = http_build_query($getdata);
 
-        return $protocol . '://' . $host . $path. (strlen($qs) > 0 ? $qs : '');
+        return $protocol . '://' . $host . $path. (strlen($qs) > 0 ? '?'.$qs : '');
     }
 
     public function GET($endpoint, $params = [])
